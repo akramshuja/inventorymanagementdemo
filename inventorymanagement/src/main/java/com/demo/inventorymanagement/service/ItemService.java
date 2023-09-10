@@ -45,6 +45,7 @@ public class ItemService implements IItemService{
 		ItemEntity entity = buildItemEntity(item);
 		entity.setItemEnteredDate(LocalDateTime.now());
 		entity.setItemEnteredByUser(item.getItemEnteredByUser());
+		entity.setItemStatus(ItemStatus.AVAILABLE);
 		
 		itemRepository.save(entity);
 		ItemResponse response = new ItemResponse();
